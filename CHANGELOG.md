@@ -1,6 +1,6 @@
 # Changelog
 
-## [v1.3.0] - future release
+## [v1.3.0] - future release in April sometime
 
 ### Added
 
@@ -9,6 +9,12 @@
 - polymove!(), polyrotate!(), polyscale!() for changing polygons
 
 - intersectionlines() replaces intersection()
+
+- polyselfintersections() removed, it doesn't work at all
+
+- animate() has new option to choose ffmpeg command
+
+- Bezier (bidirectional) `arrow` method added
 
 ### Changed
 

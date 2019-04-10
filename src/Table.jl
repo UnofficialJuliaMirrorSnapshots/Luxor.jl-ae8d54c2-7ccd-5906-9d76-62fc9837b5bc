@@ -210,6 +210,11 @@ function Base.size(t::Table)
     return (t.nrows, t.ncols)
 end
 
+function Base.size(t::Table, n::Int)
+    return n == 1 ? t.nrows :
+           n == 2 ? t.ncols : 1
+end
+
 function Base.length(t::Table)
     t.nrows * t.ncols
 end
@@ -239,20 +244,20 @@ end
 Base.getindex(t::Table, I) = [t[i] for i in I]
 
 # get row:    t[1, :]
-Base.getindex(t::Table, r::Int64, ::Colon) = [t[r, n] for n in 1:t.ncols]
+Base.getindex(t::Table, r::T, ::Colon) where T <: Integer = [t[r, n] for n in 1:t.ncols]
 
 # get column: t[:, 3]
-Base.getindex(t::Table, ::Colon, c::Int64) = [t[n, c] for n in 1:t.nrows]
+Base.getindex(t::Table, ::Colon, c::T) where T <: Integer = [t[n, c] for n in 1:t.nrows]
 
 Base.eachindex(t::Table) = 1:length(t)
 
 # box extensions
 """
-    box(t::Table, r::Int, c::Int, action::Symbol=:nothing)
+    box(t::Table, r::T, c::T, action::Symbol=:nothing) where T <: Integer
 
 Draw a box in table `t` at row `r` and column `c`.
 """
-function box(t::Table, r::Int, c::Int, action::Symbol=:nothing)
+function box(t::Table, r::T, c::T, action::Symbol=:nothing) where T <: Integer
     cellw, cellh = t.colwidths[c], t.rowheights[r]
     box(t[r, c], cellw, cellh, action)
 end

@@ -68,7 +68,7 @@ export Drawing,
 
     setantialias, setline, setlinecap, setlinejoin, setdash,
 
-    move, rmove, line, rule, rline, arrow, dimension,
+    move, rmove, line, rule, rline, arrow, arrowhead, dimension,
 
     BoundingBox, boundingbox, boxwidth, boxheight, boxdiagonal, boxaspectratio,
     boxtop, boxbottom, boxtopleft, boxtopcenter, boxtopright, boxmiddleleft,
@@ -148,7 +148,7 @@ export Drawing,
     noise, initnoise,
 
     # experimental polygon functions
-    polyremovecollinearpoints, polytriangulate!, polyselfintersections,
+    polyremovecollinearpoints, polytriangulate!,
     ispointinsidetriangle, ispolyclockwise, polyorientation
 
 # basic unit conversion to Cairo/PostScript points
