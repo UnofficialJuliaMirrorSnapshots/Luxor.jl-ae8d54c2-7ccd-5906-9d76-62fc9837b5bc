@@ -80,7 +80,8 @@ export Drawing,
     Boxmaptile, boxmap,
 
     circle, circlepath, ellipse, hypotrochoid, epitrochoid, squircle, center3pts, curve,
-    arc, carc, arc2r, carc2r, spiral, sector, intersection2circles,
+    arc, carc, arc2r, carc2r, arc2sagitta, carc2sagitta,
+    spiral, sector, intersection2circles,
     intersection_line_circle, intersectionlinecircle, intersectioncirclecircle, ispointonline,
     intersectlinepoly, polyintersections, circlepointtangent, circletangent2circles,
 
@@ -142,7 +143,7 @@ export Drawing,
     lineartween, easeinquad, easeoutquad, easeinoutquad, easeincubic, easeoutcubic,
     easeinoutcubic, easeinquart, easeoutquart, easeinoutquart, easeinquint, easeoutquint,
     easeinoutquint, easeinsine, easeoutsine, easeinoutsine, easeinexpo, easeoutexpo,
-    easeinoutexpo, easeincirc, easeoutcirc, easeinoutcirc, easingflat, easeinoutinversequad,
+    easeinoutexpo, easeincirc, easeoutcirc, easeinoutcirc, easingflat, easeinoutinversequad, easeinoutbezier,
 
     # noise
     noise, initnoise,
