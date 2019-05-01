@@ -1,12 +1,14 @@
 # Changelog
 
-## [v1.3.0] - future release in April sometime
+## [v1.3.0] - April 28 2019
 
 ### Added
 
+- use Project.toml
+
 - dimension() for dimensioning
 
-- polymove!(), polyrotate!(), polyscale!() for changing polygons
+- polymove!(), polyrotate!(), polyscale!() for really changing polygons
 
 - intersectionlines() replaces intersection()
 
@@ -14,7 +16,13 @@
 
 - Bezier (bidirectional) `arrow` method added
 
-- Bezier easing function, `easeinoutbezier()` takes two normalized points to control easing when animating
+- Bezier easing function, `easeinoutbezier()` takes two normalized control points to control easing when animating
+
+- arc2sagitta()/carc2sagitta() functions added
+
+- isarcclockwise() added
+
+- pointinverse() added
 
 
 ### Changed
@@ -25,7 +33,7 @@
 
 - rescale(x, a, b) defaults to rescale(x, a, b, 0.0, 1.0)
 
-- the `@pdf`, `@png`, and `@svg` macros allow you to omit the suffix/fileextension
+- the `@pdf`, `@png`, and `@svg` macros allow you to omit the suffix/file extension
 
 - All the noise-related code has been replaced. I discovered that the algorithm was patent-encumbered, so I've switched over to the OpenSimplexNoise algorithm. The advantage is that there's now 4D simplex noise. The disadvantages are that the new code is currently a bit slower, and (obviously) all the actual noise values produced for a specific set of inputs will be slightly different from v1.2.0. The file `src/patentednoise.jl` contains the old noise code.
 
@@ -34,6 +42,8 @@
 - much noise-related code
 
 - polyselfintersections() removed, it didn't work at all
+
+- REQUIRE
 
 ### Deprecated
 
