@@ -1,6 +1,16 @@
 # Changelog
 
-## [v1.5.0] - July 4 2019
+## [v1.6.0] - ... 2019
+
+### Added
+
+### Changed
+
+### Removed
+
+### Deprecated
+
+## [v1.5.0] - July 25 2019
 
 ### Added
 
@@ -14,7 +24,7 @@
 
 - `textbox()` and `textwrap()` return a position
 
-- `rule()` has `vertices` option to return points rather than draw lines 
+- `rule()` has `vertices` option to return points rather than draw lines
 
 ### Changed
 

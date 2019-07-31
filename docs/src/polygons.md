@@ -125,6 +125,8 @@ finish() # hide
 nothing # hide
 ```
 
+The initial orientation of the polygon defaults to 0.
+
 ![n-gons](assets/figures/n-gon.png)
 
 If you want to specify the side length rather than the circumradius, use `ngonside()`.
@@ -148,6 +150,19 @@ nothing # hide
 ```
 
 ![stars](assets/figures/ngonside.png)
+
+The functions return the vertices, or you can use the `vertices=true` option.
+
+```julia
+ngon(O, 10, 5)
+```
+```5-element Array{Point,1}:
+ Point(3.0901699437494745, 9.510565162951535)
+ Point(-8.090169943749473, 5.877852522924733)
+ Point(-8.090169943749475, -5.87785252292473)
+ Point(3.0901699437494723, -9.510565162951536)
+ Point(10.0, -2.4492935982947065e-15)
+```
 
 ```@docs
 ngon
@@ -517,7 +532,7 @@ The original polygon is shown in red; the smoothed polygon is shown on top:
 
 ```@example
 using Luxor, Random # hide
-Drawing(600, 250, "assets/figures/polysmooth.png") # hide
+Drawing(600, 250, "assets/figures/polysmooth.svg") # hide
 origin() # hide
 background("white") # hide
 setopacity(0.5) # hide
@@ -526,10 +541,8 @@ setline(0.7) # hide
 tiles = Tiler(600, 250, 1, 5, margin=10)
 for (pos, n) in tiles
     p = star(pos, tiles.tilewidth/2 - 2, 5, 0.3, 0, vertices=true)
-    setdash("dot")
     sethue("red")
-    prettypoly(p, close=true, :stroke)
-    setdash("solid")
+    poly(p, close=true, :stroke)
     sethue("black")
     polysmooth(p, n * 2, :fill)
 end
@@ -538,13 +551,13 @@ finish() # hide
 nothing # hide
 ```
 
-![polysmooth](assets/figures/polysmooth.png)
+![polysmooth](assets/figures/polysmooth.svg)
 
 The final polygon shows that you can get unexpected results if you attempt to smooth corners by more than the possible amount. The `debug=true` option draws the circles if you want to find out what's going wrong, or if you want to explore the effect in more detail.
 
 ```@example
 using Luxor, Random # hide
-Drawing(600, 250, "assets/figures/polysmooth-pathological.png") # hide
+Drawing(600, 250, "assets/figures/polysmooth-pathological.svg") # hide
 origin() # hide
 background("white") # hide
 setopacity(0.75) # hide
@@ -561,7 +574,7 @@ finish() # hide
 nothing # hide
 ```
 
-![polysmooth](assets/figures/polysmooth-pathological.png)
+![polysmooth](assets/figures/polysmooth-pathological.svg)
 
 ```@docs
 polysmooth
