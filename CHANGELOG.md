@@ -4,6 +4,11 @@
 
 ### Added
 
+ - @eps macro
+ - polyintersect()
+ - rand(bb::BoundingBox)
+ - in(pt, bb) alias isinside(pt, bb)
+ 
 ### Changed
 
 ### Removed

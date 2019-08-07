@@ -5,6 +5,10 @@ Random.seed!(42)
 
 function run_all_tests()
 
+    @testset "Basics" begin
+        include("basic-test.jl")
+    end
+
     @testset "animation (Unix only)" begin
         if ! Sys.iswindows()
             include("animation-test.jl")
@@ -124,6 +128,7 @@ function run_all_tests()
         include("line-intersection-options.jl")
         include("intersection-line-circle.jl")
         include("line-intersections.jl")
+        include("polygonintersect-test.jl")
     end
     @testset "misc" begin
         include("luxor-test1.jl")
